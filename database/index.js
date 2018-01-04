@@ -7,7 +7,9 @@ const Favorites = orm.define('Favorites', {
   name: Sequelize.STRING,
   location: Sequelize.STRING,
   description: Sequelize.TEXT,
-  time: Sequelize.DATE,
+  image: Sequelize.TEXT,
+  date: Sequelize.STRING,
+  time: Sequelize.STRING,
   genre: Sequelize.STRING,
 });
 

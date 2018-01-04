@@ -60,13 +60,14 @@ class App extends React.Component {
 
   render () {
     console.log('In the render ', this.state.eventList)
-    return (<div>
-      {/* <img src="../client/dist/githublogo.png" /> */}
-      <h1 className="githubHeader"><strong>Ticketfaster</strong></h1>
-      {/* <h2 className="fetchbertHeader">&nbsp;/fetchbert</h2> */}
-      <Search onClick={this.search.bind(this)}/>
-      <EventList events={this.state.eventList}/>
-    </div>)
+    return (
+      <div>
+        <h1 className="githubHeader"><strong><em>ticketfaster</em></strong></h1>
+        {/* <h2 className="fetchbertHeader">&nbsp;/fetchbert</h2> */}
+        <Search onClick={this.search.bind(this)}/>
+        <EventList events={this.state.eventList}/>
+      </div>
+    );
   }
 }
 
