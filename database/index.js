@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
-const orm = new Sequelize('ticketmaster', 'root', '');
+const orm = new Sequelize('ticketmaster', 'root', '', {
+  dialect: 'mysql'
+});
 
 const Favorites = orm.define('Favorites', {
   name: Sequelize.STRING,
