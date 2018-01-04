@@ -11,7 +11,7 @@ class Event extends React.Component {
   favoriteEvent() {
     var favoriteObj = {
       'name': this.props.event.name,
-      'location': this.props.event._embedded.venues[0].name + ', ' + this.props.event._embedded.venues[0].state.stateCode,
+      'location': `${this.props.event._embedded.venues[0].name}, ${this.props.event._embedded.venues[0].state.stateCode}`,
       'description': (this.props.event.info) ? this.props.event.info : 'No description available.',
       'image': this.props.event.images[4].url,
       'date': this.props.event.dates.start.localDate,
