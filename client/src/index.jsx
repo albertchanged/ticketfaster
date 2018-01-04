@@ -30,7 +30,7 @@ class App extends React.Component {
       success: (data) => {
         console.log('POST success: ', data);
         if (data) {
-          events = data._embedded.events;           // this.getRepos();
+          events = data._embedded.events;
           this.state.eventList = events;
           // console.log(events);
           // this.setState({
