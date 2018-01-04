@@ -10,7 +10,8 @@ class Search extends React.Component {
       locations: [{'id': 1, 'city': 'San Francisco', 'state': 'CA'}, {'id': 2, 'city': 'Los Angeles', 'state': 'CA'}],
       genre: '',
       city: '',
-      selected: ''
+      selectedLocation: '',
+      selectedGenre: ''
     }
   }
   componentDidMount() {
@@ -46,11 +47,17 @@ class Search extends React.Component {
       }
     });
   }
-  handleChange(event) {
+  handleLocationChange(event) {
     event.preventDefault();
     this.setState({
-      selected: event.target.value
+      selectedLocation: event.target.value
     });
+  }
+  handleGenreChange(event) {
+    event.preventDefault();
+    this.setState({
+      selectedGenre: event.target.value
+    })
   }
   handleSubmit(event) {
     event.preventDefault();
@@ -58,8 +65,8 @@ class Search extends React.Component {
   }
   sendData() {
     this.setState({
-      genre: document.getElementById('genreInput').value,
-      city: this.state.selected.toLowerCase().replace(/\s/g, '')
+      genre: this.state.selectedGenre.toLowerCase(),
+      city: this.state.selectedLocation.toLowerCase().replace(/\s/g, '')
     });
   }
   render() {
@@ -67,20 +74,39 @@ class Search extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
-            <p>Specify a genre!</p>
-            <input id="genreInput" type="text" />
-            <p>Specify a city!</p>
-            <select 
-              id="cityDropdown" 
-              value={this.state.selected}
-              onChange={this.handleChange.bind(this)}>
-              {
-                this.state.locations.map((location) => (
-                  (<option key={location.id} value={location.city}>{location.city + ', ' + location.state}</option>)
-                ))
-              }
-            </select>
-            <button onClick={this.sendData.bind(this)}>Search!</button>
+            <div className="inputDiv">
+              <div>
+                <p>Genre</p>
+                {/* <input id="genreInput" type="text" /> */}
+                <select 
+                  value={this.state.selectedGenre}
+                  onChange={this.handleGenreChange.bind(this)}
+                >
+                  <option key={0} value={'Country'}>Country</option>
+                  <option key={1} value={'Dance'}>Dance</option>
+                  <option key={2} value={'Metal'}>Metal</option>
+                  <option key={3} value={'R&B'}>R&B</option>
+                  <option key={4} value={'Rap'}>Rap</option>
+                  <option key={5} value={'Rock'}>Rock</option>
+                </select>
+              </div>
+              <div>
+              <p>City</p>
+              <select 
+                id="cityDropdown" 
+                value={this.state.selectedLocation}
+                onChange={this.handleLocationChange.bind(this)}>
+                {
+                  this.state.locations.map((location) => (
+                    (<option key={location.id} value={location.city}>{location.city + ', ' + location.state}</option>)
+                  ))
+                }
+              </select>
+              </div>
+              <div>
+              <button id="searchButton" onClick={this.sendData.bind(this)}>Search for events</button>
+              </div>
+            </div>
           </div>
         </form>
       </div>

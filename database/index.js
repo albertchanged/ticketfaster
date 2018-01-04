@@ -11,6 +11,8 @@ const Favorites = orm.define('Favorites', {
   date: Sequelize.STRING,
   time: Sequelize.STRING,
   genre: Sequelize.STRING,
+}, {
+  timestamps: false
 });
 
 Favorites.sync();

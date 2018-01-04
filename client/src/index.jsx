@@ -3,20 +3,19 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Search from './components/Search.jsx';
 import EventList from './components/EventList.jsx';
-// import Repo from './components/Repo.jsx';
+import FavoritesList from './components/FavoritesList.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventList: []
+      eventList: [],
+      favoritesList: [{'name': 'Alebrt Chadf'}]
     }
   }
-
   componentDidMount() {
     // this.getEvents();
   }
-
   search (genre, city) {
     // console.log(`${term} was searched`);
     // TODO
@@ -58,6 +57,20 @@ class App extends React.Component {
     });
   }
 
+  getFavorites() {
+    $.ajax({
+      url: '/favorites',
+      method: 'GET',
+      contentType: 'application/json',
+      success: (data) => {
+        console.log(data)
+      },
+      error: (data) => {
+
+      }
+    })
+  }
+
   render () {
     console.log('In the render ', this.state.eventList)
     return (
@@ -66,6 +79,7 @@ class App extends React.Component {
         {/* <h2 className="fetchbertHeader">&nbsp;/fetchbert</h2> */}
         <Search onClick={this.search.bind(this)}/>
         <EventList events={this.state.eventList}/>
+        {/* <FavoritesList favorites={this.state.favoritesList} /> */}
       </div>
     );
   }

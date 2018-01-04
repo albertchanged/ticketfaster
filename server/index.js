@@ -34,7 +34,7 @@ app.post('/favorites', (req, res) => {
     'time': req.body.time,
     'genre': req.body.genre
   }
-  console.log(params);
+  console.log('This is from POST ', params);
   db.Favorites.create(params)
     .then((event) => {
       res.sendStatus(201);
@@ -43,6 +43,10 @@ app.post('/favorites', (req, res) => {
 app.get('/favorites', (req, res) => {
   // TODO - your code here!
   // This route should send back the top 25 repos
+  db.Favorite.query('SELECT * FROM Favorites', { type: sequelize.QueryTypes.SELECT})
+    .then((favorite) => {
+      console.log(favorite);
+    })
   console.log('trying to get events');
 });
 
