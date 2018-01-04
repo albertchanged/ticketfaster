@@ -2,6 +2,7 @@ const express = require('express');
 let app = express();
 const bodyParser = require('body-parser');
 const ticketmaster = require('../helpers/ticketmaster.js');
+const db = require('../database/index.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
@@ -22,7 +23,17 @@ app.post('/events', (req, res) => {
     }
   });
 });
- 
+
+app.post('/favorites', (req, res) => {
+  let params = {
+    'name': req.body.name,
+    // ''
+  }
+  db.Favorites.create(params)
+    .then((event) => {
+      res.sendStatus(201);
+    })
+});
 app.get('/events', (req, res) => {
   // TODO - your code here!
   // This route should send back the top 25 repos

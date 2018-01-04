@@ -28,6 +28,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.81.0",
+    "sequelize": "^4.28.7",
     "underscore": "^1.8.3"
   }
 }
