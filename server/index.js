@@ -27,26 +27,23 @@ app.post('/events', (req, res) => {
 app.post('/favorites', (req, res) => {
   let params = {
     'name': req.body.name,
-    // ''
+    'location': req.body.location,
+    'description': req.body.description,
+    'image': req.body.image,
+    'date': req.body.date,
+    'time': req.body.time,
+    'genre': req.body.genre
   }
+  console.log(params);
   db.Favorites.create(params)
     .then((event) => {
       res.sendStatus(201);
     })
 });
-app.get('/events', (req, res) => {
+app.get('/favorites', (req, res) => {
   // TODO - your code here!
   // This route should send back the top 25 repos
   console.log('trying to get events');
-  ticketmaster.getEventsByGenre(req.body.genre, req.body.city, (err, data) => {
-    if (err) {
-      res.sendStatus(404);
-    } else {
-      // if (data.length > 0) {
-      res.status(200).json(data);
-      // }
-    }
-  });
 });
 
 let port = 1128;

@@ -67,9 +67,9 @@ class Search extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
           <div>
-            <h3>Specify a genre!</h3>
+            <p>Specify a genre!</p>
             <input id="genreInput" type="text" />
-            <h3>Specify a city!</h3>
+            <p>Specify a city!</p>
             <select 
               id="cityDropdown" 
               value={this.state.selected}
