@@ -12,7 +12,8 @@ class Search extends React.Component {
       city: '',
       selectedLocation: '',
       selectedGenre: '',
-      favoriteClicked: false
+      favoriteClicked: false,
+      searching: true
     }
   }
   componentDidMount() {
@@ -73,7 +74,8 @@ class Search extends React.Component {
   }
   sendClicked() {
     this.setState({
-      favoriteClicked: !this.state.favoriteClicked
+      favoriteClicked: !this.state.favoriteClicked,
+      searching: !this.state.searching
     });
   }
   render() {
@@ -121,7 +123,7 @@ class Search extends React.Component {
               </div>
             </div>
             <br />
-            { (!this.state.favoriteClicked) ? 
+            { (!this.state.favoriteClicked && this.state.searching) ? 
               <div className="searchLabel">
               <p>Search results for <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best city'}</span>:</strong></p>
             </div>

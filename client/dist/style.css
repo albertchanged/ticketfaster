@@ -112,7 +112,7 @@ a {
   padding-bottom: 1%;
   display: grid;
   grid-area: content;
-  grid-template-columns: 0.3fr 0.3fr 0.3fr 0.2fr 0.3fr;
+  grid-template-columns: 0.3fr 0.2fr 0.3fr 0.2fr 0.3fr;
   grid-template-areas: "content content content content content"
 }
 .favoriteDiv {
