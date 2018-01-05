@@ -134,17 +134,17 @@ a {
   #searchButton {
     margin-top: 1.75%;
     width: 75%;
-    height: 30px;
+    height: 32.5px;
     appearance: none;
     font-size: 15px;
     vertical-align: middle;
-    padding-bottom: 1.35%;
+    padding-bottom: 1%;
     float: bottom;
   }
 
   #viewFavButton {
     width: 65%;
-    height: 30px;
+    height: 32.5px;
     margin-top: 1.75%;
     vertical-align: middle;
     padding-bottom: 1%;
