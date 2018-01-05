@@ -19,8 +19,8 @@ Once the project moves into development, the press release can be used as a touc
 ## Title ##
   Ticketfaster
 
-## Quick Description ##
-  Ticketfaster was developed for anyone who wanted an smooth and efficient way to find events that THEY want in THEIR cities.
+## Purpose ##
+  Ticketfaster was developed for anyone who wants an smooth and efficient way to find events that THEY want in THEIR cities.
 
 ## Summary ##
   Ticketfaster is a search tool that retrieves the best events, specified by genre and city, and allows users to save them to their favorites and easily access ticket purchase pages. Two (2) easy selections yield up to 20 awesome events. One cannot get an event ticket faster than this!
