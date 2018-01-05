@@ -99,17 +99,17 @@ class Search extends React.Component {
                 </select>
               </div>
               <div>
-              <p>City</p>
-              <select 
-                id="dropdown" 
-                value={this.state.selectedLocation}
-                onChange={this.handleLocationChange.bind(this)}>
-                {
-                  this.state.locations.map((location) => (
-                    (<option key={location.id} value={location.city}>{location.city + ', ' + location.state}</option>)
-                  ))
-                }
-              </select>
+                <p>City</p>
+                <select 
+                  id="dropdown" 
+                  value={this.state.selectedLocation}
+                  onChange={this.handleLocationChange.bind(this)}>
+                  {
+                    this.state.locations.map((location) => (
+                      (<option key={location.id} value={location.city}>{location.city + ', ' + location.state}</option>)
+                    ))
+                  }
+                </select>
               </div>
               <div>
                 <p>Search</p>
@@ -124,7 +124,9 @@ class Search extends React.Component {
             <br />
             { ((this.props.searching || !this.props.searching) && (!this.props.favoriteClicked)) ? 
               <div className="searchLabel">
-                <p>Always finding you <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best cities'}</span></strong>.</p>
+                <p>Always finding you <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span>
+                </strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best cities'}</span></strong>.
+                </p>
                 <hr className="horizontal" />
                 <br />
               </div>

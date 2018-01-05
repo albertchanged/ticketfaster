@@ -65,8 +65,8 @@ class Event extends React.Component {
         <br /><br /><strong>Genre:</strong><br /> {this.props.event.classifications[0].genre.name}</p>
         <p><strong>Date:</strong><br />{this.props.event.dates.start.localDate}<br /><br /><strong>Time:</strong><br />{this.props.event.dates.start.localTime.slice(0, 5)}</p>
         <div>
-        <button style={style1} className="favoriteButton" onClick={this.favoriteEvent.bind(this)}>{this.state.clicked ? 'GOING' : 'I WANT TO GO'}</button>
-        <br /><a href={this.props.event.url} target="_blank"><button style={style2} className="purchaseButton" onClick={this.purchaseClicked.bind(this)}>PURCHASE</button></a>
+          <button style={style1} className="favoriteButton" onClick={this.favoriteEvent.bind(this)}>{this.state.clicked ? 'GOING' : 'I WANT TO GO'}</button>
+          <br /><a href={this.props.event.url} target="_blank"><button style={style2} className="purchaseButton" onClick={this.purchaseClicked.bind(this)}>PURCHASE</button></a>
         </div>
       </div>
     );
