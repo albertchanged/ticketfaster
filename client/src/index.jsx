@@ -32,21 +32,14 @@ class App extends React.Component {
         console.log('POST success: ', data);
         if ('_embedded' in data) {
           events = data._embedded.events;
-          this.state.eventList = events;
-          this.getEvents();
-        } else {
           this.setState({
-          })
+            eventList: events
+          });
         }
       },
       error: (data) => {
         console.log('POST error: ', data);
       }
-    });
-  }
-  getEvents() {
-    this.setState({
-      eventList: this.state.eventList
     });
   }
   showFavorites(clicked) {

@@ -6,7 +6,8 @@ body {
 
 .ticketmasterHeader {
   padding-left: 2%;
-  font-family: Arial;
+  font-family: Roboto Condensed, Arial, sans-serif;
+  color: #414141;
 }
 
 p {
@@ -36,7 +37,7 @@ a {
   margin-left: -30px;
   padding-left: 2.15%;
   padding-top: 0.5%;
-  color: black;
+  color: #414141;
 }
 
 .favoriteLabel {
@@ -78,7 +79,7 @@ a {
   width: 65%;
   border: 1.5px solid white;
   background-color: white;
-  color: black;
+  color: #414141;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -117,6 +118,9 @@ a {
   grid-template-areas: "content content content content content";
   padding-bottom: 0.4%;
 }
+.inputDiv p {
+  padding-left: 1%;
+}
 .eventDiv, .favoriteDiv {
   background-color: #E9E9E9;
   margin-top: 1.5%;
@@ -126,7 +130,7 @@ a {
   display: grid;
   grid-area: content;
   grid-template-columns: 0.3fr 0.2fr 0.3fr 0.2fr 0.3fr;
-  grid-template-areas: "content content content content content"
+  grid-template-areas: "content content content content content";
 }
 
 @media screen and (max-width: 3000px) and (min-width: 1200px) {
