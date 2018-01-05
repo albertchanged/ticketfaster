@@ -1,5 +1,5 @@
 {
-  "name": "github-fetcher-fullstack-v2",
+  "name": "ticketfaster",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "engines": {
     "node": "7.7.4"
   },
-  "author": "Beth Johnson",
+  "author": "Albert Chang",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.23.1",
