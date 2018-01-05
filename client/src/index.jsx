@@ -65,12 +65,12 @@ class App extends React.Component {
     })
   }
   render () {
-    console.log('In the render ', this.state.eventList);
+    console.log('In the render ', this.state.eventList)
     return (
       <div>
         <h1 className="ticketmasterHeader"><strong><em>ticketfaster</em></strong></h1>
         <div className="topbar">
-          h onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)} clicked={this.state.favoriteClicked} searching={this.state.searching}/>
+          <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)} clicked={this.state.favoriteClicked} searching={this.state.searching}/>
         </div>
         {!this.state.searching && <EventList events={this.state.eventList} onFavoriteChange={this.getFavorites.bind(this)} />}
         {this.state.favoriteClicked && <FavoritesList favorites={this.state.favoritesList} onFavoriteChange={this.getFavorites.bind(this)} updated={this.state.updatedFavorites}/>}
