@@ -13,7 +13,7 @@ class Search extends React.Component {
       selectedLocation: '',
       selectedGenre: '',
       favoriteClicked: false,
-      searching: true
+      searching: false
     }
   }
   componentDidMount() {
@@ -42,7 +42,6 @@ class Search extends React.Component {
         this.setState({
           locations: locationArray
         })
-        // this.getRepos();
       },
       error: (data) => {
         console.log('GET error: ', data);
@@ -123,10 +122,12 @@ class Search extends React.Component {
               </div>
             </div>
             <br />
-            { (!this.state.favoriteClicked && this.state.searching) ? 
+            { ((this.props.searching || !this.props.searching) && (!this.props.favoriteClicked)) ? 
               <div className="searchLabel">
-              <p>Search results for <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best city'}</span>:</strong></p>
-            </div>
+                <p>Always finding you <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best city'}</span></strong>.</p>
+                <hr className="horizontal" />
+                <br />
+              </div>
             : null }
           </div>
         </form>

@@ -9,19 +9,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/events', (req, res) => {
-  // TODO - your code here!
-  // This route should take the github username provided
-  // and get the repo information from the github API, then
-  // save the repo information in the database
   console.log(req.body.genre);
   console.log(req.body.city);
   ticketmaster.getEventsByGenre(req.body.genre, req.body.city, (err, data) => {
     if (err) {
       res.sendStatus(404);
     } else {
-      // if (data.length > 0) {
       res.status(200).json(data);
-      // }
     }
   });
 });
@@ -45,8 +39,6 @@ app.post('/favorites', (req, res) => {
 
 app.get('/favorites', (req, res) => {
   console.log('Hi from get');
-  // TODO - your code here!
-  // This route should send back the top 25 repos
   db.Favorites.findAll()
     .then((favorite) => {
       console.log('This is the favorites: ', favorite);

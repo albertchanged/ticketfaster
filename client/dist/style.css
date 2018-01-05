@@ -1,11 +1,12 @@
 body {
-  font-family: Helvetica;
+  font-family: Roboto Condensed;
   margin: 0 auto;
   font-size: 20px;
 }
 
 .ticketmasterHeader {
   padding-left: 2%;
+  font-family: Arial;
 }
 
 p {
@@ -15,6 +16,12 @@ p {
 a {
   text-decoration: none;
   color: #01A9DB;
+}
+
+.horizontal {
+  width: 10%;
+  float: left;
+  border: 1.5px solid #E1E1E1;
 }
 
 .topbar {
@@ -35,6 +42,7 @@ a {
 .favoriteLabel {
   padding-left: 2%;
   padding-top: 0.5%;
+  margin-top: 7.5px;
 }
 
 .labelStyle {
@@ -58,8 +66,10 @@ a {
   border: 1.5px solid #2E2E2E;
   background-color: #2E2E2E;
   color: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   vertical-align: middle;
   padding-bottom: 0.175%;
 }
@@ -69,8 +79,10 @@ a {
   border: 1.5px solid white;
   background-color: white;
   color: black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   vertical-align: middle;
   padding-bottom: 0.175%;
   font-size: 15px;
@@ -105,7 +117,7 @@ a {
   grid-template-areas: "content content content content content"
 }
 .eventDiv, .favoriteDiv {
-  background-color: #F1F1F1;
+  background-color: #E9E9E9;
   margin-top: 1.5%;
   padding-left: 2%;
   padding-top: 0.25%;
@@ -114,9 +126,6 @@ a {
   grid-area: content;
   grid-template-columns: 0.3fr 0.2fr 0.3fr 0.2fr 0.3fr;
   grid-template-areas: "content content content content content"
-}
-.favoriteDiv {
-  background-color: #F1F1F1;
 }
 
 @media screen and (max-width: 3000px) and (min-width: 1200px) {
@@ -127,7 +136,7 @@ a {
     appearance: none;
     font-size: 15px;
     vertical-align: middle;
-    padding-bottom: 1.5%;
+    padding-bottom: 1.35%;
     float: bottom;
   }
 
