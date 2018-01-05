@@ -76,7 +76,7 @@ class App extends React.Component {
         <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)} clicked={this.state.favoriteClicked} searching={this.state.searching}/>
         </div>
         {!this.state.searching && <EventList events={this.state.eventList} />}
-        {this.state.favoriteClicked && <FavoritesList favorites={this.state.favoritesList} />}
+        {this.state.favoriteClicked && <FavoritesList favorites={this.state.favoritesList} onFavoriteChange={this.getFavorites.bind(this)}/>}
         
       </div>
     );
