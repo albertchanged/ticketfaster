@@ -30,7 +30,7 @@ class App extends React.Component {
       data: JSON.stringify({'genre': genre, 'city': city}),
       success: (data) => {
         console.log('POST success: ', data);
-        if (data) {
+        if ('_embedded' in data) {
           events = data._embedded.events;
           this.state.eventList = events;
           this.getEvents();
@@ -41,19 +41,16 @@ class App extends React.Component {
       }
     });
   }
-
   getEvents() {
     this.setState({
       eventList: this.state.eventList
     });
   }
-
   showFavorites(clicked) {
     this.setState({
       favoriteClicked: clicked
     })
   }
-
   getFavorites() {
     $.ajax({
       url: '/favorites',
@@ -70,19 +67,17 @@ class App extends React.Component {
       }
     })
   }
-
   render () {
     console.log('In the render ', this.state.eventList)
     return (
       <div>
         <h1 className="ticketmasterHeader"><strong><em>ticketfaster</em></strong></h1>
-        {/* <h2 className="fetchbertHeader">&nbsp;/fetchbert</h2> */}
         <div className="topbar">
-        <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)}/>
+        <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)} clicked={this.state.favoriteClicked} searching={this.state.searching}/>
         </div>
+        {!this.state.searching && <EventList events={this.state.eventList} />}
+        {this.state.favoriteClicked && <FavoritesList favorites={this.state.favoritesList} />}
         
-        {this.state.favoriteClicked ? <FavoritesList favorites={this.state.favoritesList} /> : null}
-        {!this.state.searching ? <EventList events={this.state.eventList} /> : null}
       </div>
     );
   }
