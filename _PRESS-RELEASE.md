@@ -16,10 +16,10 @@ Oh, and I also like to write press-releases in what I call "Oprah-speak" for mai
 Once the project moves into development, the press release can be used as a touchstone; a guiding light. The product team can ask themselves, "Are we building what is in the press release?" If they find they're spending time building things that aren't in the press release (overbuilding), they need to ask themselves why. This keeps product development focused on achieving the customer benefits and not building extraneous stuff that takes longer to build, takes resources to maintain, and doesn't provide real customer benefit (at least not enough to warrant inclusion in the press release).
  -->
  
-## Heading ##
+## Title ##
   Ticketfaster
 
-## Sub-Heading ##
+## Quick Description ##
   Ticketfaster was developed for anyone who wanted an smooth and efficient way to find events that THEY want in THEIR cities.
 
 ## Summary ##
@@ -31,7 +31,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Solution ##
   Ticketfaster easily narrows down the search results, has no distracting features, and streamlines the event-finding process through 2 selections.
 
-## Quote from You ##
+## Developer Quote ##
   'Ticketfaster was crafted with the event-goer in mind. We saw flaws with many ticket search tools, so we set out to make one that looks great and works even better. We hope you enjoy using Ticketfaster!'
 
 ## How to Get Started ##
