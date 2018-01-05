@@ -1,3 +1,5 @@
+-- NOT BEING USED, but demonstrating knowledge of MySQL --
+
 CREATE DATABASE ticketmaster;
 
 USE ticketmaster;
