@@ -124,7 +124,7 @@ class Search extends React.Component {
             <br />
             { ((this.props.searching || !this.props.searching) && (!this.props.favoriteClicked)) ? 
               <div className="searchLabel">
-                <p>Always finding you <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best city'}</span></strong>.</p>
+                <p>Always finding you <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best cities'}</span></strong>.</p>
                 <hr className="horizontal" />
                 <br />
               </div>

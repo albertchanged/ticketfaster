@@ -34,6 +34,9 @@ class App extends React.Component {
           events = data._embedded.events;
           this.state.eventList = events;
           this.getEvents();
+        } else {
+          this.setState({
+          })
         }
       },
       error: (data) => {
@@ -60,6 +63,7 @@ class App extends React.Component {
         this.setState({
           favoritesList: data
         })
+        console.log(this.state.favoritesList.length);
         console.log('These are the favorites', data);
       },
       error: (data) => {
@@ -75,9 +79,8 @@ class App extends React.Component {
         <div className="topbar">
         <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)} clicked={this.state.favoriteClicked} searching={this.state.searching}/>
         </div>
-        {!this.state.searching && <EventList events={this.state.eventList} />}
-        {this.state.favoriteClicked && <FavoritesList favorites={this.state.favoritesList} onFavoriteChange={this.getFavorites.bind(this)}/>}
-        
+        {!this.state.searching && <EventList events={this.state.eventList} onFavoriteChange={this.getFavorites.bind(this)} />}
+        {this.state.favoriteClicked && <FavoritesList favorites={this.state.favoritesList} onFavoriteChange={this.getFavorites.bind(this)} updated={this.state.updatedFavorites}/>}
       </div>
     );
   }
