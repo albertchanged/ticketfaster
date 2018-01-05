@@ -49,14 +49,13 @@ app.get('/favorites', (req, res) => {
 
 app.post('/favorites:event', (req, res) => {
   console.log('Hi from trying to delete a favorite');
-  let removed = req.body.removed;
-  console.log(removed);
+  console.log(req.body.removed);
   db.Favorites.destroy({where: { id: req.body.removed }})
     .then((favorite) => {
       console.log('This is the removed favorite ', favorite);
       res.sendStatus(201);
     })
-})
+});
 
 let port = 1128;
 
