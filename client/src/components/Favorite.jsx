@@ -1,13 +1,14 @@
-// import React from 'react';
+import React from 'react';
 
-// const Favorite = (props) = (
-//   <div>
-//     <p>Event: {this.props.favorite.name}</p>
-//     {/* <br />Venue: {this.props.favorite._embedded.venues[0].name + ', ' + this.props.event._embedded.venues[0].state.stateCode} */}
-//     {/* <br /> */}
-//     {/* <button onClick={this.favoriteEvent.bind(this)}>I WANT TO GO</button> */}
-//     {/* </p> */}
-//   </div>
-// )
+const Favorite = (props) => (
+  <div className="favoriteDiv">
+    <img src={props.favorite.image} className="favoriteImage"/>
+    <p>Event: {props.favorite.name}
+    <br />Venue: {props.favorite.location}
+    <br />
+    </p>
+    {/* <button onClick={this.favoriteEvent.bind(this)}>I WANT TO GO</button> */}
+  </div>
+)
 
-// export default Favorite;
+export default Favorite;

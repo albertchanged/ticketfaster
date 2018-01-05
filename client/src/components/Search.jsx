@@ -77,17 +77,16 @@ class Search extends React.Component {
             <div className="inputDiv">
               <div>
                 <p>Genre</p>
-                {/* <input id="genreInput" type="text" /> */}
                 <select 
                   value={this.state.selectedGenre}
                   onChange={this.handleGenreChange.bind(this)}
                 >
-                  <option key={0} value={'Country'}>Country</option>
-                  <option key={1} value={'Dance'}>Dance</option>
-                  <option key={2} value={'Metal'}>Metal</option>
-                  <option key={3} value={'R&B'}>R&B</option>
-                  <option key={4} value={'Rap'}>Rap</option>
-                  <option key={5} value={'Rock'}>Rock</option>
+                  <option key='0' value='Country'>Country</option>
+                  <option key='1' value='Dance'>Dance</option>
+                  <option key='2' value='Metal'>Metal</option>
+                  <option key='3' value='R&B'>R&B</option>
+                  <option key='4' value='Rap'>Rap</option>
+                  <option key='5' value='Rock'>Rock</option>
                 </select>
               </div>
               <div>
@@ -104,8 +103,13 @@ class Search extends React.Component {
               </select>
               </div>
               <div>
+              <p>Search</p>
               <button id="searchButton" onClick={this.sendData.bind(this)}>Search for events</button>
               </div>
+            </div>
+            <br />
+            <div className="searchLabel">
+              <p>Search results for <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation + ':' : 'the best city:'}</span></strong></p>
             </div>
           </div>
         </form>
