@@ -18,3 +18,4 @@ const FavoritesList = (props) => {
 }
 
 export default FavoritesList;
+

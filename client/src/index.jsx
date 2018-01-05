@@ -10,7 +10,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       eventList: [],
-      favoritesList: []
+      favoritesList: [],
+      favoriteClicked: false
     }
   }
   componentDidMount() {
@@ -83,8 +84,8 @@ class App extends React.Component {
         <div className="topbar">
         <Search onClick={this.search.bind(this)}/>
         </div>
-        <EventList events={this.state.eventList}/>
         <FavoritesList favorites={this.state.favoritesList} />
+        <EventList events={this.state.eventList}/>
       </div>
     );
   }
