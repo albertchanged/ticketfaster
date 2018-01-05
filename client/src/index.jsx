@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       eventList: [],
       favoritesList: [],
-      favoriteClicked: false
+      favoriteClicked: false,
+      searching: false
     }
   }
   componentDidMount() {
@@ -21,6 +22,9 @@ class App extends React.Component {
     // console.log(`${term} was searched`);
     // TODO
     // console.log(term);
+    this.setState({
+      searching: !this.state.searching
+    })
     var events = [];
     $.ajax({
       url: '/events',
@@ -62,7 +66,6 @@ class App extends React.Component {
     this.setState({
       favoriteClicked: clicked
     })
-    this.getFavorites();
   }
 
   getFavorites() {
@@ -91,8 +94,9 @@ class App extends React.Component {
         <div className="topbar">
         <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)}/>
         </div>
-        {this.state.favoriteClicked ? <FavoritesList favorites={this.state.favoritesList} onFavoriteChange={this.getFavorites.bind(this)}/> : null}
-        {!this.state.favoriteClicked ? <EventList events={this.state.eventList}/> : null}
+        
+        {this.state.favoriteClicked ? <FavoritesList favorites={this.state.favoritesList} /> : null}
+        {!this.state.searching ? <EventList events={this.state.eventList} /> : null}
       </div>
     );
   }
