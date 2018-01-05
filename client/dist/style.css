@@ -79,6 +79,10 @@ a {
   background-color: #009CDE;
   color: white;
 }
+.purchaseButton:hover, .purchaseButton:active {
+  background-color: #009CDE;
+  color: white;
+}
 #dropdown {
   border: 3px solid white;
   height: 30px;
