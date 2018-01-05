@@ -5,6 +5,7 @@ const FavoritesList = (props) => {
   console.log(props.favorites);
   return (
     <div>
+      <p className="favoriteLabel">Here are your favorited events:</p>
       {
         props.favorites.map((favorite) => (
           <Favorite

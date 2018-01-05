@@ -4,6 +4,9 @@ class Favorite extends React.Component {
   constructor(props) {
     super(props);
   }
+  removeFavorite() {
+    console.log('I want to remove this');
+  }
   render() {
     return (
       <div className="favoriteDiv">
@@ -15,7 +18,7 @@ class Favorite extends React.Component {
         <p><strong>Description:</strong><br />{this.props.favorite.description}
         <br /><br /><strong>Genre:</strong><br /> {this.props.favorite.genre}</p>
         <p><strong>Date:</strong><br /> {this.props.favorite.date}<br /><br /><strong>Time:</strong><br /> {this.props.favorite.time}</p>
-        <button className="favoriteButton">REMOVE</button>
+        <button className="favoriteButton" onClick={this.removeFavorite.bind(this)}>REMOVE</button>
       </div>
     )
   }
