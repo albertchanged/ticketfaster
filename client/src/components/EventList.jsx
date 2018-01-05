@@ -4,7 +4,6 @@ import Event from './Event.jsx';
 const EventList = (props) => {
   return (
     <div>
-    {/* <div> */}
     {
       props.events.map((event) => (
         <Event 
