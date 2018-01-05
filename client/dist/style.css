@@ -1,0 +1,156 @@
+body {
+  font-family: Helvetica;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.ticketmasterHeader {
+  padding-left: 2%;
+}
+
+p {
+  margin-bottom: 0.5%;
+}
+
+a {
+  text-decoration: none;
+  color: #01A9DB;
+}
+
+.topbar {
+  background-color: #009CDE;
+  color: white;
+  padding-left: 2%;
+  padding-top: 1%;
+}
+
+.searchLabel {
+  background-color: white;
+  margin-left: -30px;
+  padding-left: 2%;
+  padding-top: 0.5%;
+  color: black;
+}
+
+.labelStyle {
+  color: #01A9DB;
+}
+
+#genreInput {
+  /* margin-top: 0.75%; */
+  /* appearance: none; */
+  border: 3px solid #01A9DB;
+  border-top-right-radius: 7.5px;
+  border-top-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  padding-left: 0.4%;
+  padding-bottom: 0.2%;
+}
+
+#searchButton {
+  margin-top: 0.75%;
+  appearance: none;
+  border: 1.5px solid #2E2E2E;
+  background-color: #2E2E2E;
+  color: white;
+  border-top-right-radius: 7.5px;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  vertical-align: middle;
+  padding-bottom: 0.175%;
+}
+
+.favoriteButton {
+  background-color: white;
+  color: #009CDE;
+  width: 30%;
+  height: 40px;
+  border: 2px solid #009CDE;
+  float: right;
+}
+
+.favoriteButton:hover, .favoriteButton:active {
+  background-color: #009CDE;
+  color: white;
+}
+
+select {
+  border: 3px solid #01A9DB;
+  height: 30px;
+  width: 60%;
+  font-size: 17.5px;
+  margin-top: 1.5%;
+}
+.inputDiv {
+  margin-top: -10px;
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 0.2fr 0.2fr 0.15fr;
+  grid-template-areas: "content content content"
+}
+.eventDiv {
+  background-color: #F1F1F1;
+  margin-top: 1.5%;
+  padding-left: 2%;
+  padding-top: 0.25%;
+  padding-bottom: 1%;
+  display: grid;
+  grid-area: content;
+  grid-template-columns: 0.3fr 0.2fr 0.3fr 0.2fr 0.3fr;
+  grid-template-areas: "content content content content content"
+}
+.favoriteDiv {
+  background-color: #F1F1F1;
+}
+
+@media screen and (max-width: 3000px) and (min-width: 1200px) {
+  #searchInput {
+    width: 25%;
+    height: 20px;
+    margin-top: 1%;
+    padding-left: 0.5%;
+    padding-bottom: 0.2%;
+    font-size: 15px;
+  }
+  
+  #searchButton {
+    margin-top: 1.75%;
+    width: 75%;
+    height: 30px;
+    appearance: none;
+    font-size: 15px;
+    vertical-align: middle;
+    padding-bottom: 1.5%;
+    float: bottom;
+  }
+
+  .favoriteImage {
+    width: 80%;
+    margin-bottom: -10px;
+  }
+
+  .favoriteButton {
+    font-size: 15px;
+    width: 50%;
+    margin-top: 7%;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 300px) {
+  #searchInput {
+    width: 30%;
+    height: 30px;
+    margin-top: 1.5%;
+    padding-left: 0.5%;
+    padding-bottom: 0.2%;
+    font-size: 15px;
+  }
+  
+  #searchButton {
+    margin-top: 1.2%;
+    width: 15%;
+    height: 43px;
+    font-size: 20px;
+    vertical-align: middle;
+    padding-bottom: 0.175%;
+  }
+}
