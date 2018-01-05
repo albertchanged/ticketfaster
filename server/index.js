@@ -42,6 +42,7 @@ app.post('/favorites', (req, res) => {
       res.sendStatus(201);
     })
 });
+
 app.get('/favorites', (req, res) => {
   console.log('Hi from get');
   // TODO - your code here!
@@ -52,6 +53,17 @@ app.get('/favorites', (req, res) => {
       res.status(200).json(favorite);
     })
 });
+
+app.post('/favorites:event', (req, res) => {
+  console.log('Hi from trying to delete a favorite');
+  let removed = req.body.removed;
+  console.log(removed);
+  db.Favorites.destroy({where: { id: req.body.removed }})
+    .then((favorite) => {
+      console.log('This is the removed favorite ', favorite);
+      res.sendStatus(201);
+    })
+})
 
 let port = 1128;
 
