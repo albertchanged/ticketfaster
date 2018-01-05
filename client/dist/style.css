@@ -8,6 +8,7 @@ body {
   padding-left: 2%;
   font-family: Roboto Condensed, Arial, sans-serif;
   color: #414141;
+  font-size: 50px;
 }
 
 p {
@@ -122,11 +123,11 @@ a {
   background-color: #E9E9E9;
   margin-top: 1.5%;
   padding-left: 2%;
-  padding-top: 0.25%;
+  padding-top: 0.75%;
   padding-bottom: 1.5%;
   display: grid;
   grid-area: content;
-  grid-template-columns: 0.3fr 0.2fr 0.5fr 0.2fr 0.3fr;
+  grid-template-columns: 0.3fr 0.2fr 0.4fr 0.2fr 0.3fr;
   grid-template-areas: "content content content content content";
 }
 @media screen and (max-width: 3000px) and (min-width: 1200px) {
@@ -152,7 +153,7 @@ a {
 
   .favoriteImage {
     width: 80%;
-    margin-top: 6%;
+    margin-top: 4%;
   }
 
   .favoriteButton, .purchaseButton {
