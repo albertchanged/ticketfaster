@@ -105,7 +105,7 @@ a {
   padding-bottom: 1.5%;
   display: grid;
   grid-area: content;
-  grid-template-columns: 0.3fr 0.2fr 0.4fr 0.2fr 0.3fr;
+  grid-template-columns: 0.3fr 0.25fr 0.45fr 0.2fr 0.3fr;
   grid-template-areas: "content content content content content";
 }
 @media screen and (max-width: 3000px) and (min-width: 1200px) {
