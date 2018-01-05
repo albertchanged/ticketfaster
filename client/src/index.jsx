@@ -19,9 +19,6 @@ class App extends React.Component {
     this.getFavorites();
   }
   search (genre, city) {
-    // console.log(`${term} was searched`);
-    // TODO
-    // console.log(term);
     this.setState({
       searching: !this.state.searching
     })
@@ -36,19 +33,8 @@ class App extends React.Component {
         if (data) {
           events = data._embedded.events;
           this.state.eventList = events;
-          // console.log(events);
-          // this.setState({
-          //   eventList: events
-          // });
           this.getEvents();
         }
-          // console.log(venues);
-          // var locationArray = [];
-          // this.state.repos.concat(data);
-          // console.log('This is events ', events);
-        
-          // console.log(this.state.eventList);
-          // console.log(this.state.eventList[0]._embedded.venues.name);
       },
       error: (data) => {
         console.log('POST error: ', data);
