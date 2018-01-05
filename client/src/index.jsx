@@ -62,6 +62,7 @@ class App extends React.Component {
     this.setState({
       favoriteClicked: clicked
     })
+    this.getFavorites();
   }
 
   getFavorites() {
@@ -90,7 +91,7 @@ class App extends React.Component {
         <div className="topbar">
         <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)}/>
         </div>
-        {this.state.favoriteClicked ? <FavoritesList favorites={this.state.favoritesList} /> : null}
+        {this.state.favoriteClicked ? <FavoritesList favorites={this.state.favoritesList} onFavoriteChange={this.getFavorites.bind(this)}/> : null}
         {!this.state.favoriteClicked ? <EventList events={this.state.eventList}/> : null}
       </div>
     );

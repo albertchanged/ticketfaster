@@ -11,6 +11,7 @@ const FavoritesList = (props) => {
           <Favorite
             favorite={favorite}
             key={favorite.id}
+            onFavoriteChange={props.getFavorites}
           />
         ))
       }

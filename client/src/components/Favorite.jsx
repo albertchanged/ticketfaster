@@ -1,13 +1,28 @@
 import React from 'react';
+import $ from 'jquery';
 
 class Favorite extends React.Component {
   constructor(props) {
     super(props);
   }
   removeFavorite() {
-    console.log('I want to remove this');
+    // console.log('This is removed ', this.state.removed);
+    $.ajax({
+      url: '/favorites:event',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({'removed': this.props.favorite.id}),
+      success: (data) => {
+        console.log('POST success: ', data);
+        this.props.getFavorites();
+      },
+      error: (data) => {
+        console.log('POST error: ', data);
+      }
+    });
   }
   render() {
+    // console.log(this.state.removed);
     return (
       <div className="favoriteDiv">
         <img src={this.props.favorite.image} className="favoriteImage"/>
