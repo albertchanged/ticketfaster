@@ -59,16 +59,15 @@ class Event extends React.Component {
     // console.log(this.state.favorited);
     return (
       <div className="eventDiv">
-
         <img src={this.props.event.images[4].url} className="favoriteImage"/>
         <p>
           <strong>Event:</strong><br /> {this.props.event.name}<br /><br />
           <strong>Venue:</strong><br /> {this.props.event._embedded.venues[0].name + ', ' + this.props.event._embedded.venues[0].state.stateCode}
         </p>
-        <p><strong>Description:</strong><br />{(this.props.event.info) ? this.props.event.info : 'No description available.'}</p>
-        <p><strong>Date:</strong><br /> 1/4/2018<br /><br /><strong>Time:</strong><br /> 20:08</p>
+        <p><strong>Description:</strong><br />{(this.props.event.info) ? this.props.event.info : 'No description available.'}
+        <br /><br /><strong>Genre:</strong><br /> {this.props.event.classifications[0].genre.name}</p>
+        <p><strong>Date:</strong><br />{this.props.event.dates.start.localDate}<br /><br /><strong>Time:</strong><br />{this.props.event.dates.start.localTime.slice(0, 5)}</p>
         <button className="favoriteButton" onClick={this.favoriteEvent.bind(this)}>I WANT TO GO</button>
-        
       </div>
     );
   }

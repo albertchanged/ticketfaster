@@ -77,7 +77,8 @@ class Search extends React.Component {
             <div className="inputDiv">
               <div>
                 <p>Genre</p>
-                <select 
+                <select
+                  id="dropdown"
                   value={this.state.selectedGenre}
                   onChange={this.handleGenreChange.bind(this)}
                 >
@@ -92,7 +93,7 @@ class Search extends React.Component {
               <div>
               <p>City</p>
               <select 
-                id="cityDropdown" 
+                id="dropdown" 
                 value={this.state.selectedLocation}
                 onChange={this.handleLocationChange.bind(this)}>
                 {
@@ -103,13 +104,18 @@ class Search extends React.Component {
               </select>
               </div>
               <div>
-              <p>Search</p>
-              <button id="searchButton" onClick={this.sendData.bind(this)}>Search for events</button>
+                <p>Search</p>
+                <button id="searchButton" onClick={this.sendData.bind(this)}>Search for events</button>
+              </div>
+              <div></div>
+              <div>
+                <p>Favorites</p>
+                <button id="viewFavButton">View favorited events</button>
               </div>
             </div>
             <br />
             <div className="searchLabel">
-              <p>Search results for <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation + ':' : 'the best city:'}</span></strong></p>
+              <p>Search results for <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best city'}</span>:</strong></p>
             </div>
           </div>
         </form>

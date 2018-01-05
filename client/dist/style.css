@@ -53,11 +53,22 @@ a {
   border: 1.5px solid #2E2E2E;
   background-color: #2E2E2E;
   color: white;
-  border-top-right-radius: 7.5px;
   border-bottom-left-radius: 7.5px;
   border-bottom-right-radius: 7.5px;
   vertical-align: middle;
   padding-bottom: 0.175%;
+}
+
+#viewFavButton {
+  width: 65%;
+  border: 1.5px solid white;
+  background-color: white;
+  color: black;
+  border-bottom-left-radius: 7.5px;
+  border-bottom-right-radius: 7.5px;
+  vertical-align: middle;
+  padding-bottom: 0.175%;
+  font-size: 15px;
 }
 
 .favoriteButton {
@@ -74,8 +85,8 @@ a {
   color: white;
 }
 
-select {
-  border: 3px solid #01A9DB;
+#dropdown {
+  border: 3px solid white;
   height: 30px;
   width: 60%;
   font-size: 17.5px;
@@ -85,10 +96,10 @@ select {
   margin-top: -10px;
   display: grid;
   grid-area: content;
-  grid-template-columns: 0.2fr 0.2fr 0.15fr;
-  grid-template-areas: "content content content"
+  grid-template-columns: 0.2fr 0.3fr 0.3fr 0.2fr 0.3fr;
+  grid-template-areas: "content content content content content"
 }
-.eventDiv {
+.eventDiv, .favoriteDiv {
   background-color: #F1F1F1;
   margin-top: 1.5%;
   padding-left: 2%;
@@ -104,15 +115,6 @@ select {
 }
 
 @media screen and (max-width: 3000px) and (min-width: 1200px) {
-  #searchInput {
-    width: 25%;
-    height: 20px;
-    margin-top: 1%;
-    padding-left: 0.5%;
-    padding-bottom: 0.2%;
-    font-size: 15px;
-  }
-  
   #searchButton {
     margin-top: 1.75%;
     width: 75%;
@@ -122,6 +124,15 @@ select {
     vertical-align: middle;
     padding-bottom: 1.5%;
     float: bottom;
+  }
+
+  #viewFavButton {
+    width: 65%;
+    height: 30px;
+    margin-top: 1.75%;
+    vertical-align: middle;
+    padding-bottom: 1%;
+    font-size: 15px;
   }
 
   .favoriteImage {
