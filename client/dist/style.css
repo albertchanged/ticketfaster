@@ -3,36 +3,30 @@ body {
   margin: 0 auto;
   font-size: 20px;
 }
-
 .ticketmasterHeader {
   padding-left: 2%;
   font-family: Roboto Condensed, Arial, sans-serif;
   color: #414141;
   font-size: 50px;
 }
-
 p {
   margin-bottom: 0.5%;
 }
-
 a {
   text-decoration: none;
   color: #01A9DB;
 }
-
 .horizontal {
   width: 10%;
   float: left;
   border: 1.5px solid #E1E1E1;
 }
-
 .topbar {
   background-color: #009CDE;
   color: white;
   padding-left: 2%;
   padding-top: 1%;
 }
-
 .searchLabel {
   background-color: white;
   margin-left: -30px;
@@ -40,28 +34,14 @@ a {
   padding-top: 0.5%;
   color: #414141;
 }
-
 .favoriteLabel {
   padding-left: 2%;
   padding-top: 0.5%;
   margin-top: 7.5px;
 }
-
 .labelStyle {
   color: #01A9DB;
 }
-
-#genreInput {
-  /* margin-top: 0.75%; */
-  /* appearance: none; */
-  border: 3px solid #01A9DB;
-  border-top-right-radius: 7.5px;
-  border-top-left-radius: 7.5px;
-  border-bottom-right-radius: 7.5px;
-  padding-left: 0.4%;
-  padding-bottom: 0.2%;
-}
-
 #searchButton {
   margin-top: 0.75%;
   appearance: none;
@@ -75,7 +55,6 @@ a {
   vertical-align: middle;
   padding-bottom: 0.175%;
 }
-
 #viewFavButton {
   width: 65%;
   border: 1.5px solid white;
@@ -89,7 +68,6 @@ a {
   padding-bottom: 0.175%;
   font-size: 15px;
 }
-
 .favoriteButton, .purchaseButton {
   background-color: white;
   color: #009CDE;
@@ -141,7 +119,6 @@ a {
     padding-bottom: 1%;
     float: bottom;
   }
-
   #viewFavButton {
     width: 65%;
     height: 32.5px;
@@ -150,12 +127,10 @@ a {
     padding-bottom: 1%;
     font-size: 15px;
   }
-
   .favoriteImage {
     width: 80%;
     margin-top: 4%;
   }
-
   .favoriteButton, .purchaseButton {
     font-size: 15px;
     width: 50%;
@@ -166,15 +141,6 @@ a {
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 300px) {
-  #searchInput {
-    width: 30%;
-    height: 30px;
-    margin-top: 1.5%;
-    padding-left: 0.5%;
-    padding-bottom: 0.2%;
-    font-size: 15px;
-  }
-  
   #searchButton {
     margin-top: 1.2%;
     width: 15%;
