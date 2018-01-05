@@ -2,7 +2,7 @@ import React from 'react';
 import Favorite from './Favorite.jsx';
 
 const FavoritesList = (props) => {
-  console.log(props.favorites);
+  // console.log(props.favorites);
   return (
     <div>
       <p className="favoriteLabel">Here are your {props.favorites.length} favorited events:</p>
@@ -11,7 +11,7 @@ const FavoritesList = (props) => {
           <Favorite
             favorite={favorite}
             key={favorite.id}
-            onFavoriteChange={props.getFavorites}
+            onFavoriteChange={props.onFavoriteChange}
           />
         ))
       }

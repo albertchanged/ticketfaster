@@ -5,12 +5,13 @@ class Favorite extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false
+      clicked: false,
     }
   }
   removeFavorite() {
     this.setState({
-      clicked: !this.state.clicked
+      clicked: !this.state.clicked,
+      updated: true
     })
     $.ajax({
       url: '/favorites:event',
@@ -19,7 +20,7 @@ class Favorite extends React.Component {
       data: JSON.stringify({'removed': this.props.favorite.id}),
       success: (data) => {
         console.log('POST success: ', data);
-        this.props.getFavorites();
+        this.props.onFavoriteChange();
       },
       error: (data) => {
         console.log('POST error: ', data);

@@ -114,7 +114,8 @@ a {
   display: grid;
   grid-area: content;
   grid-template-columns: 0.2fr 0.3fr 0.3fr 0.2fr 0.3fr;
-  grid-template-areas: "content content content content content"
+  grid-template-areas: "content content content content content";
+  padding-bottom: 0.4%;
 }
 .eventDiv, .favoriteDiv {
   background-color: #E9E9E9;

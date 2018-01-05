@@ -9,6 +9,7 @@ const EventList = (props) => {
         <Event 
           event={event}
           key={event.id}
+          onFavoriteChange={props.onFavoriteChange}
         />
       ))
     }

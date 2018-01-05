@@ -31,22 +31,7 @@ class Event extends React.Component {
       data: JSON.stringify(favoriteObj),
       success: (data) => {
         console.log('POST success: ', data);
-        if (data) {
-          // events = data._embedded.events;
-          // this.state.eventList = events;
-          // console.log(events);
-          // this.setState({
-          //   eventList: events
-          // });
-          // this.getEvents();
-        }
-          // console.log(venues);
-          // var locationArray = [];
-          // this.state.repos.concat(data);
-          // console.log('This is events ', events);
-        
-          // console.log(this.state.eventList);
-          // console.log(this.state.eventList[0]._embedded.venues.name);
+        this.props.onFavoriteChange();
       },
       error: (data) => {
         console.log('POST error: ', data);
