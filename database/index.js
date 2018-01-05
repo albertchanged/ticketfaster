@@ -11,6 +11,7 @@ const Favorites = orm.define('Favorites', {
   date: Sequelize.STRING,
   time: Sequelize.STRING,
   genre: Sequelize.STRING,
+  purchase: Sequelize.TEXT
 }, {
   timestamps: false
 });

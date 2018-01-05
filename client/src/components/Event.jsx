@@ -6,8 +6,14 @@ class Event extends React.Component {
     super(props);
     this.state = {
       favorited: '',
-      clicked: false
+      clicked: false,
+      purchased: false
     }
+  }
+  purchaseClicked() {
+    this.setState({
+      purchased: !this.state.purchased
+    })
   }
   favoriteEvent() {
     var favoriteObj = {
@@ -17,7 +23,8 @@ class Event extends React.Component {
       'image': this.props.event.images[4].url,
       'date': this.props.event.dates.start.localDate,
       'time': this.props.event.dates.start.localTime.slice(0, 5),
-      'genre': this.props.event.classifications[0].genre.name
+      'genre': this.props.event.classifications[0].genre.name,
+      'purchase': this.props.event.url
     };
     this.setState({
       favorited: favoriteObj,
@@ -39,9 +46,13 @@ class Event extends React.Component {
     });
   }
   render() {
-    let style = {
+    let style1 = {
       backgroundColor: (this.state.clicked) ? '#009CDE' : 'white',
       color: (this.state.clicked) ? 'white' : '#009CDE'
+    }
+    let style2 = {
+      backgroundColor: (this.state.purchased) ? '#009CDE' : 'white',
+      color: (this.state.purchased) ? 'white' : '#009CDE'
     }
     return (
       <div className="eventDiv">
@@ -53,7 +64,10 @@ class Event extends React.Component {
         <p><strong>Description:</strong><br />{(this.props.event.info) ? this.props.event.info : 'No description available.'}
         <br /><br /><strong>Genre:</strong><br /> {this.props.event.classifications[0].genre.name}</p>
         <p><strong>Date:</strong><br />{this.props.event.dates.start.localDate}<br /><br /><strong>Time:</strong><br />{this.props.event.dates.start.localTime.slice(0, 5)}</p>
-        <button style={style} className="favoriteButton" onClick={this.favoriteEvent.bind(this)}>{this.state.clicked ? 'GOING' : 'I WANT TO GO'}</button>
+        <div>
+        <button style={style1} className="favoriteButton" onClick={this.favoriteEvent.bind(this)}>{this.state.clicked ? 'GOING' : 'I WANT TO GO'}</button>
+        <br /><a href={this.props.event.url} target="_blank"><button style={style2} className="purchaseButton" onClick={this.purchaseClicked.bind(this)}>PURCHASE</button></a>
+        </div>
       </div>
     );
   }

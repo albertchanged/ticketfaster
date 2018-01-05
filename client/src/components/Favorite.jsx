@@ -6,7 +6,13 @@ class Favorite extends React.Component {
     super(props);
     this.state = {
       clicked: false,
+      purchased: false
     }
+  }
+  clickPurchase() {
+    this.setState({
+      purchased: !this.state.purchased
+    })
   }
   removeFavorite() {
     this.setState({
@@ -28,9 +34,13 @@ class Favorite extends React.Component {
     });
   }
   render() {
-    let style = {
+    let style1 = {
       backgroundColor: (this.state.clicked) ? '#009CDE' : 'white',
       color: (this.state.clicked) ? 'white' : '#009CDE'
+    }
+    let style2 = {
+      backgroundColor: (this.state.purchased) ? '#009CDE' : 'white',
+      color: (this.state.purchased) ? 'white' : '#009CDE'
     }
     return (
       <div className="favoriteDiv">
@@ -42,7 +52,10 @@ class Favorite extends React.Component {
         <p><strong>Description:</strong><br />{this.props.favorite.description}
         <br /><br /><strong>Genre:</strong><br /> {this.props.favorite.genre}</p>
         <p><strong>Date:</strong><br /> {this.props.favorite.date}<br /><br /><strong>Time:</strong><br /> {this.props.favorite.time}</p>
-        <button style={style} className="favoriteButton" onClick={this.removeFavorite.bind(this)}>{this.state.clicked ? 'REMOVED' : 'REMOVE'}</button>
+        <div>
+        <button style={style1} className="favoriteButton" onClick={this.removeFavorite.bind(this)}>{this.state.clicked ? 'REMOVED' : 'REMOVE'}</button>
+        <br /><a href={this.props.favorite.purchase} target="_blank"><button style={style2} className="purchaseButton" onClick={this.clickPurchase.bind(this)}>PURCHASE</button></a>
+        </div>
       </div>
     )
   }

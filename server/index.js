@@ -28,7 +28,8 @@ app.post('/favorites', (req, res) => {
     'image': req.body.image,
     'date': req.body.date,
     'time': req.body.time,
-    'genre': req.body.genre
+    'genre': req.body.genre,
+    'purchase': req.body.purchase
   }
   console.log('This is from POST ', params);
   db.Favorites.create(params)
