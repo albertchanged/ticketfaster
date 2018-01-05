@@ -58,6 +58,12 @@ class App extends React.Component {
     });
   }
 
+  showFavorites(clicked) {
+    this.setState({
+      favoriteClicked: clicked
+    })
+  }
+
   getFavorites() {
     $.ajax({
       url: '/favorites',
@@ -82,10 +88,10 @@ class App extends React.Component {
         <h1 className="ticketmasterHeader"><strong><em>ticketfaster</em></strong></h1>
         {/* <h2 className="fetchbertHeader">&nbsp;/fetchbert</h2> */}
         <div className="topbar">
-        <Search onClick={this.search.bind(this)}/>
+        <Search onClick={this.search.bind(this)} onFavoriteClick={this.showFavorites.bind(this)}/>
         </div>
-        <FavoritesList favorites={this.state.favoritesList} />
-        <EventList events={this.state.eventList}/>
+        {this.state.favoriteClicked ? <FavoritesList favorites={this.state.favoritesList} /> : null}
+        {!this.state.favoriteClicked ? <EventList events={this.state.eventList}/> : null}
       </div>
     );
   }

@@ -11,7 +11,8 @@ class Search extends React.Component {
       genre: '',
       city: '',
       selectedLocation: '',
-      selectedGenre: ''
+      selectedGenre: '',
+      favoriteClicked: false
     }
   }
   componentDidMount() {
@@ -62,11 +63,17 @@ class Search extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.onClick(this.state.genre, this.state.city);
+    this.props.onFavoriteClick(this.state.favoriteClicked);
   }
   sendData() {
     this.setState({
       genre: this.state.selectedGenre.toLowerCase(),
       city: this.state.selectedLocation.toLowerCase().replace(/\s/g, '')
+    });
+  }
+  sendClicked() {
+    this.setState({
+      favoriteClicked: !this.state.favoriteClicked
     });
   }
   render() {
@@ -110,13 +117,15 @@ class Search extends React.Component {
               <div></div>
               <div>
                 <p>Favorites</p>
-                <button id="viewFavButton">View favorited events</button>
+                <button id="viewFavButton" onClick={this.sendClicked.bind(this)}>View favorited events</button>
               </div>
             </div>
             <br />
-            <div className="searchLabel">
+            { (!this.state.favoriteClicked) ? 
+              <div className="searchLabel">
               <p>Search results for <strong><span className="labelStyle">{(this.state.selectedGenre) ? this.state.selectedGenre : 'awesome'}</span></strong> events in <strong><span className="labelStyle">{(this.state.selectedLocation) ? this.state.selectedLocation : 'the best city'}</span>:</strong></p>
             </div>
+            : null }
           </div>
         </form>
       </div>
