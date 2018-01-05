@@ -9,7 +9,7 @@ const FavoritesList = (props) => {
         props.favorites.map((favorite) => (
           <Favorite
             favorite={favorite}
-            
+            key={favorite.id}
           />
         ))
       }

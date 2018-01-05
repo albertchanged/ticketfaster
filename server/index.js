@@ -3,6 +3,7 @@ let app = express();
 const bodyParser = require('body-parser');
 const ticketmaster = require('../helpers/ticketmaster.js');
 const db = require('../database/index.js');
+const sequelize = require('sequelize');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
@@ -13,6 +14,7 @@ app.post('/events', (req, res) => {
   // and get the repo information from the github API, then
   // save the repo information in the database
   console.log(req.body.genre);
+  console.log(req.body.city);
   ticketmaster.getEventsByGenre(req.body.genre, req.body.city, (err, data) => {
     if (err) {
       res.sendStatus(404);
@@ -41,13 +43,14 @@ app.post('/favorites', (req, res) => {
     })
 });
 app.get('/favorites', (req, res) => {
+  console.log('Hi from get');
   // TODO - your code here!
   // This route should send back the top 25 repos
-  db.Favorite.query('SELECT * FROM Favorites', { type: sequelize.QueryTypes.SELECT})
+  db.Favorites.findAll()
     .then((favorite) => {
-      console.log(favorite);
+      console.log('This is the favorites: ', favorite);
+      res.status(200).json(favorite);
     })
-  console.log('trying to get events');
 });
 
 let port = 1128;

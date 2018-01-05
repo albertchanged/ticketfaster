@@ -58,12 +58,16 @@ class Event extends React.Component {
   render() {
     // console.log(this.state.favorited);
     return (
-      <div>
-        <p>Event: {this.props.event.name}
-        <br />Venue: {this.props.event._embedded.venues[0].name + ', ' + this.props.event._embedded.venues[0].state.stateCode}
-        <br />
-        <button onClick={this.favoriteEvent.bind(this)}>I WANT TO GO</button>
-        </p>
+      <div className="eventDiv">
+        <div>
+        <p>Event: {this.props.event.name}</p>
+        </div>
+        <div>
+        <p>Venue: {this.props.event._embedded.venues[0].name + ', ' + this.props.event._embedded.venues[0].state.stateCode}</p>
+        </div>
+        <div>
+        <button className="favoriteButton" onClick={this.favoriteEvent.bind(this)}>I WANT TO GO</button>
+        </div>
       </div>
     );
   }

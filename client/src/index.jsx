@@ -10,11 +10,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       eventList: [],
-      favoritesList: [{'name': 'Alebrt Chadf'}]
+      favoritesList: []
     }
   }
   componentDidMount() {
-    // this.getEvents();
+    this.getFavorites();
   }
   search (genre, city) {
     // console.log(`${term} was searched`);
@@ -63,10 +63,13 @@ class App extends React.Component {
       method: 'GET',
       contentType: 'application/json',
       success: (data) => {
-        console.log(data)
+        this.setState({
+          favoritesList: data
+        })
+        console.log('These are the favorites', data);
       },
       error: (data) => {
-
+        console.log('ERROR getting ', data)
       }
     })
   }
@@ -75,11 +78,13 @@ class App extends React.Component {
     console.log('In the render ', this.state.eventList)
     return (
       <div>
-        <h1 className="githubHeader"><strong><em>ticketfaster</em></strong></h1>
+        <h1 className="ticketmasterHeader"><strong><em>ticketfaster</em></strong></h1>
         {/* <h2 className="fetchbertHeader">&nbsp;/fetchbert</h2> */}
+        <div className="topbar">
         <Search onClick={this.search.bind(this)}/>
+        </div>
         <EventList events={this.state.eventList}/>
-        {/* <FavoritesList favorites={this.state.favoritesList} /> */}
+        <FavoritesList favorites={this.state.favoritesList} />
       </div>
     );
   }

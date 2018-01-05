@@ -18,3 +18,4 @@ const Favorites = orm.define('Favorites', {
 Favorites.sync();
 
 exports.Favorites = Favorites;
+
