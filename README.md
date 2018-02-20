@@ -1,9 +1,6 @@
-# TICKETFASTER #
+# Ticketfaster #
  
 ![Ticketfaster Demo](https://i.imgur.com/tBp4lK5.gif)
-
-## Title ##
-  Ticketfaster
 
 ## Purpose ##
   **Ticketfaster** was developed for anyone who wants an smooth and efficient way to find events that THEY want in THEIR cities.
