@@ -9,8 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
 
 app.post('/events', (req, res) => {
-  console.log(req.body.genre);
-  console.log(req.body.city);
   ticketmaster.getEventsByGenre(req.body.genre, req.body.city, (err, data) => {
     if (err) {
       res.sendStatus(404);
@@ -31,7 +29,6 @@ app.post('/favorites', (req, res) => {
     'genre': req.body.genre,
     'purchase': req.body.purchase
   }
-  console.log('This is from POST ', params);
   db.Favorites.create(params)
     .then((event) => {
       res.sendStatus(201);
@@ -39,20 +36,15 @@ app.post('/favorites', (req, res) => {
 });
 
 app.get('/favorites', (req, res) => {
-  console.log('Hi from get');
   db.Favorites.findAll()
     .then((favorite) => {
-      console.log('This is the favorites: ', favorite);
       res.status(200).json(favorite);
     })
 });
 
 app.post('/favorites:event', (req, res) => {
-  console.log('Hi from trying to delete a favorite');
-  console.log(req.body.removed);
   db.Favorites.destroy({where: { id: req.body.removed }})
     .then((favorite) => {
-      console.log('This is the removed favorite ', favorite);
       res.sendStatus(201);
     })
 });
