@@ -21,7 +21,7 @@ class App extends React.Component {
   search (genre, city) {
     this.setState({
       searching: !this.state.searching
-    })
+    });
     var events = [];
     $.ajax({
       url: '/events',
@@ -45,7 +45,7 @@ class App extends React.Component {
   showFavorites(clicked) {
     this.setState({
       favoriteClicked: clicked
-    })
+    });
   }
   getFavorites() {
     $.ajax({
@@ -55,7 +55,7 @@ class App extends React.Component {
       success: (data) => {
         this.setState({
           favoritesList: data
-        })
+        });
         console.log('These are the favorites', data);
       },
       error: (data) => {

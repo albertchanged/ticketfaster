@@ -32,21 +32,21 @@ app.post('/favorites', (req, res) => {
   db.Favorites.create(params)
     .then((event) => {
       res.sendStatus(201);
-    })
+    });
 });
 
 app.get('/favorites', (req, res) => {
   db.Favorites.findAll()
     .then((favorite) => {
       res.status(200).json(favorite);
-    })
+    });
 });
 
 app.post('/favorites:event', (req, res) => {
   db.Favorites.destroy({where: { id: req.body.removed }})
     .then((favorite) => {
       res.sendStatus(201);
-    })
+    });
 });
 
 let port = 1128;

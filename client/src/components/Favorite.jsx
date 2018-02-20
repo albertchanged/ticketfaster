@@ -12,13 +12,13 @@ class Favorite extends React.Component {
   clickPurchase() {
     this.setState({
       purchased: !this.state.purchased
-    })
+    });
   }
   removeFavorite() {
     this.setState({
       clicked: !this.state.clicked,
       updated: true
-    })
+    });
     $.ajax({
       url: '/favorites:event',
       method: 'POST',

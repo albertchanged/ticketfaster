@@ -7,7 +7,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locations: [{'id': 1, 'city': 'San Francisco', 'state': 'CA'}, {'id': 2, 'city': 'Los Angeles', 'state': 'CA'}],
+      locations: [],
       genre: '',
       city: '',
       selectedLocation: '',
@@ -38,10 +38,10 @@ class Search extends React.Component {
         locationArray = locationArray.sort((a, b) => { console.log(a.city + ', ' + b.city); return a.city - b.city; });
         this.setState({
           locations: locationArray
-        })
+        });
       },
       error: (data) => {
-        console.log('GET error: ', data);
+        console.error('GET error: ', data);
       }
     });
   }
@@ -55,7 +55,7 @@ class Search extends React.Component {
     event.preventDefault();
     this.setState({
       selectedGenre: event.target.value
-    })
+    });
   }
   handleSubmit(event) {
     event.preventDefault();
