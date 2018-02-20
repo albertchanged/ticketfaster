@@ -1,7 +1,9 @@
 # TICKETFASTER #
  
 ## DEMO ##
-[![Ticketmaster Demo](https://img.youtube.com/vi/p5ptaZFyc_w/0.jpg)](https://www.youtube.com/watch?v=p5ptaZFyc_w)
+<a href="https://www.youtube.com/watch?v=p5ptaZFyc_w
+" target="_blank"><img src="https://img.youtube.com/vi/p5ptaZFyc_w/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 ## Title ##
   Ticketfaster
