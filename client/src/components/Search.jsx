@@ -25,7 +25,6 @@ class Search extends React.Component {
       success: (data) => {
         console.log('GET success: ', data._embedded);
         var venues = data._embedded.venues;
-        // console.log(venues);
         var locationArray = [];
         venues.forEach((venue) => {
           var locationObj = {
@@ -36,9 +35,7 @@ class Search extends React.Component {
           locationArray.push(locationObj);
         })
         locationArray = _.uniqBy(locationArray, 'city');
-        console.log(locationArray);
         locationArray = locationArray.sort((a, b) => { console.log(a.city + ', ' + b.city); return a.city - b.city; });
-        console.log(locationArray);
         this.setState({
           locations: locationArray
         })

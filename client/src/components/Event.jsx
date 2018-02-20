@@ -41,7 +41,7 @@ class Event extends React.Component {
         this.props.onFavoriteChange();
       },
       error: (data) => {
-        console.log('POST error: ', data);
+        console.error('POST error: ', data);
       }
     });
   }

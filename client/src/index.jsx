@@ -38,7 +38,7 @@ class App extends React.Component {
         }
       },
       error: (data) => {
-        console.log('POST error: ', data);
+        console.error('POST error: ', data);
       }
     });
   }
@@ -56,16 +56,14 @@ class App extends React.Component {
         this.setState({
           favoritesList: data
         })
-        console.log(this.state.favoritesList.length);
         console.log('These are the favorites', data);
       },
       error: (data) => {
-        console.log('ERROR getting ', data)
+        console.error('ERROR getting ', data)
       }
     })
   }
   render () {
-    console.log('In the render ', this.state.eventList)
     return (
       <div>
         <h1 className="ticketmasterHeader"><strong><em>ticketfaster</em></strong></h1>
